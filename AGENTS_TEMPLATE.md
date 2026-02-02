@@ -3,12 +3,46 @@
 > **INSTRUCCIONES PARA IA**: Esta es una plantilla para generar un documento AGENTS.md para cualquier proyecto.
 > Completa cada sección con la información específica del proyecto analizado.
 > Elimina estas instrucciones y los comentarios entre `<!-- -->` del documento final.
+> 
+> **IMPORTANTE**: Este documento debe usarse junto con [SKILLS.md](./SKILLS.md):
+> - **AGENTS.md** (este archivo): Define QUÉ es el proyecto, CÓMO está estructurado
+> - **SKILLS.md**: Define QUÉ PUEDE HACER el agente, procedimientos y tareas ejecutables
 
 ---
 
 # AGENTS.md - Contexto del Proyecto para Agentes de Código
 
-## 📋 Información General del Proyecto
+## 📖 Propósito de este Documento
+
+Este documento proporciona el **contexto fundamental** del proyecto para agentes de código (IA).
+Describe la arquitectura, estructura, convenciones y reglas del proyecto.
+
+**Documentos complementarios**:
+- **[SKILLS.md](./SKILLS.md)**: Habilidades, capacidades y procedimientos ejecutables
+- **README.md**: Información general y guía de inicio para humanos
+- **Documentación técnica**: Detalles de implementación y APIs
+
+## � Relación AGENTS.md ↔ SKILLS.md
+
+**División de responsabilidades**:
+
+| AGENTS.md (este documento) | SKILLS.md |
+|---------------------------|----------|
+| ✅ QUÉ es el proyecto | ✅ QUÉ PUEDE HACER el agente |
+| ✅ CÓMO está estructurado | ✅ CÓMO ejecutar tareas |
+| ✅ Arquitectura y patrones | ✅ Procedimientos paso a paso |
+| ✅ Convenciones y reglas | ✅ Comandos y herramientas |
+| ✅ Entidades y dominio | ✅ Ejemplos de código ejecutable |
+| ✅ Configuración del proyecto | ✅ Checklists y verificaciones |
+
+**Flujo de trabajo recomendado**:
+1. Lee **AGENTS.md** para entender el contexto del proyecto
+2. Consulta **SKILLS.md** para encontrar la skill apropiada para tu tarea
+3. Ejecuta el procedimiento siguiendo las convenciones de AGENTS.md
+
+---
+
+## �📋 Información General del Proyecto
 
 ### Identificación
 <!-- Completar con información básica del proyecto -->
@@ -159,28 +193,58 @@ El código debe adherirse a los **principios SOLID**:
 
 ## 🔑 Funcionalidades Clave
 
+<!-- Para cada funcionalidad, describe QUÉ hace y CÓMO está estructurada.
+     Para procedimientos de CÓMO IMPLEMENTAR, ver SKILLS.md -->
+
 ### 1. [Funcionalidad Principal 1]
-<!-- Describir cada funcionalidad importante del sistema -->
-- [Descripción detallada]
-- [Características principales]
-- [Endpoints o puntos de entrada]
-- **Documentación**: `[ruta a documento si existe]`
+**Descripción**: [Descripción detallada de qué hace esta funcionalidad]
+
+**Módulos involucrados**:
+- [Módulo/Servicio 1]: [Responsabilidad]
+- [Módulo/Servicio 2]: [Responsabilidad]
+
+**Endpoints/Puntos de entrada**:
+- `[METHOD] /api/path`: [Descripción]
+- `[METHOD] /api/path`: [Descripción]
+
+**Entidades relacionadas**: [Entity1, Entity2, Entity3]
+
+**Skills relacionadas**: Ver [SKILLS.md - Skill Específica](./SKILLS.md#skill-específica)
+
+**Documentación adicional**: `[ruta a documento si existe]`
+
+---
 
 ### 2. [Funcionalidad Principal 2]
-- [Descripción detallada]
-- [Características principales]
-- [Endpoints o puntos de entrada]
-- **Documentación**: `[ruta a documento si existe]`
+**Descripción**: [Descripción detallada]
+
+**Módulos involucrados**:
+- [Módulo]: [Responsabilidad]
+
+**Endpoints/Puntos de entrada**:
+- `[METHOD] /api/path`: [Descripción]
+
+**Entidades relacionadas**: [Entidades]
+
+**Skills relacionadas**: Ver [SKILLS.md](./SKILLS.md)
+
+**Documentación adicional**: `[ruta]`
+
+---
 
 ### 3. [Funcionalidad Principal 3]
-- [Descripción detallada]
-- [Características principales]
-- [Endpoints o puntos de entrada]
-- **Documentación**: `[ruta a documento si existe]`
+**Descripción**: [Descripción detallada]
 
-### 4. [Más funcionalidades según sea necesario]
-- [Descripción]
-- **Documentación**: `[ruta]`
+**Flujo de datos**:
+```
+[Cliente] -> [Controller] -> [Service] -> [Repository] -> [Database]
+                              ↓
+                        [External API]
+```
+
+**Módulos involucrados**: [Lista]
+
+**Skills relacionadas**: Ver [SKILLS.md](./SKILLS.md)
 
 ---
 
@@ -445,85 +509,214 @@ function miFuncion(parametro1: string, parametro2: number): boolean {
 
 ## ⚠️ Puntos Importantes para Agentes
 
+> **REGLAS CRÍTICAS**: Estas reglas NUNCA deben violarse. Son específicas de este proyecto.
+> Para procedimientos y mejores prácticas generales, consulta [SKILLS.md](./SKILLS.md)
+
 ### 1. [Área Crítica 1: ej. Modificación de Entidades]
-<!-- Reglas estrictas que NUNCA se deben violar -->
-- **NUNCA** [acción prohibida]
-- **SIEMPRE** [acción requerida]
-- [Más reglas específicas]
+**Contexto**: [Por qué es crítica esta área]
+
+**Reglas estrictas**:
+- ❌ **NUNCA** [acción prohibida] porque [razón]
+- ✅ **SIEMPRE** [acción requerida] porque [razón]
+- ⚠️ **PRECAUCIÓN** [acción que requiere cuidado]
+
+**Ejemplo correcto**:
+```[lenguaje]
+// Código de ejemplo que muestra la forma correcta
+```
+
+**Ejemplo incorrecto**:
+```[lenguaje]
+// Código de ejemplo que muestra lo que NO hacer
+```
+
+**Ver también**: [SKILLS.md - Skill Relacionada](./SKILLS.md#skill)
+
+---
 
 ### 2. [Área Crítica 2: ej. Queries y Performance]
-<!-- Mejores prácticas obligatorias -->
-- Usar [técnica/patrón específico]
-- Evitar [anti-patrón específico]
-- Aplicar [optimización específica]
+**Contexto**: [Por qué es crítica esta área]
+
+**Reglas**:
+- ✅ Usar [técnica/patrón específico] para [caso de uso]
+- ❌ Evitar [anti-patrón específico] porque [impacto]
+- 🎯 Aplicar [optimización específica] cuando [condición]
+
+**Threshold de performance**:
+- Queries: < [X]ms
+- Endpoints: < [Y]ms
+- [Otra métrica]: < [Z]
+
+**Ver también**: [SKILLS.md - Performance Optimization](./SKILLS.md#performance-optimization)
+
+---
 
 ### 3. [Área Crítica 3: ej. DTOs y Validación]
-<!-- Convenciones de datos -->
-- [Regla de validación]
-- [Regla de transformación]
-- [Regla de serialización]
+**Contexto**: [Por qué es crítica esta área]
+
+**Reglas de validación**:
+- [Campo]: [Regla y razón]
+- [Campo]: [Regla y razón]
+
+**Reglas de transformación**:
+- [Transformación]: [Cuándo y cómo]
+
+**Ejemplo de DTO válido**:
+```[lenguaje]
+// Ejemplo real del proyecto
+```
+
+---
 
 ### 4. [Área Crítica 4: ej. Testing]
-<!-- Estándares de testing -->
+**Contexto**: Estándares de calidad obligatorios
+
+**Requisitos mínimos**:
 - Framework: [Jest, JUnit, pytest, etc.]
-- Cobertura mínima: [porcentaje]
-- Tests requeridos para: [casos específicos]
-- Mocking: [librería y estrategia]
+- Cobertura mínima: [porcentaje]%
+- Tests obligatorios para:
+  - [Caso 1]
+  - [Caso 2]
+  - [Caso 3]
+
+**Estrategia de mocking**: [Descripción]
+
+**Ver también**: [SKILLS.md - Testing & Quality Assurance](./SKILLS.md#testing--quality-assurance)
+
+---
 
 ### 5. [Área Crítica 5: ej. APIs/Endpoints]
-<!-- Convenciones de API -->
+**Contexto**: Convenciones de API que deben respetarse
+
+**Estándares**:
 - Base path: `[ruta base]`
-- Versionado: [estrategia]
-- Formato de respuesta: [JSON, XML, etc.]
-- Manejo de errores: [estrategia]
-- Autenticación: [método]
+- Versionado: [estrategia - ej: `/v1/`, header, etc.]
+- Formato respuesta: [JSON, XML, etc.]
+- Status codes:
+  - `200`: [Uso]
+  - `201`: [Uso]
+  - `400`: [Uso]
+  - `401`: [Uso]
+  - `404`: [Uso]
+  - `500`: [Uso]
+
+**Estructura de respuesta**:
+```json
+{
+  "[campo]": "[descripción]",
+  "[campo]": "[descripción]"
+}
+```
+
+**Manejo de errores**:
+```json
+{
+  "error": {
+    "code": "[CODE]",
+    "message": "[mensaje]",
+    "details": {}
+  }
+}
+```
+
+**Autenticación**: [Método y detalles]
+
+**Ver también**: [SKILLS.md - API Development](./SKILLS.md#api-development)
+
+---
 
 ### 6. [Área Crítica 6: ej. Base de Datos]
-<!-- Gestión de BD -->
-- Migraciones: [herramienta y proceso]
-- Seeders: [si aplica]
-- Backups: [estrategia]
-- [Más consideraciones]
+**Contexto**: Gestión de base de datos
+
+**Reglas de migraciones**:
+- Herramienta: [Flyway, Liquibase, Alembic, etc.]
+- Naming: `[patrón de nombre]`
+- ❌ NUNCA modificar migraciones ya aplicadas
+- ✅ SIEMPRE crear nueva migración para cambios
+
+**Naming de columnas/tablas**: [Estrategia]
+
+**Backups**: [Estrategia y frecuencia]
+
+**Ver también**: [SKILLS.md - Database Management](./SKILLS.md#database-management)
+
+---
 
 ### 7. [Área Crítica 7: ej. Seguridad]
-<!-- Consideraciones de seguridad -->
-- [Prácticas de seguridad obligatorias]
-- [Librerías de seguridad a usar]
-- [Validaciones requeridas]
-- [Manejo de secretos]
+**Contexto**: Prácticas de seguridad obligatorias
 
-### 8. [Más áreas según necesidad]
-<!-- Agregar tantas secciones como sea necesario -->
-- [Reglas específicas]
+**Validación y sanitización**:
+- ✅ Validar TODOS los inputs del usuario
+- ✅ Usar [librería de validación]
+- ❌ NUNCA confiar en datos del cliente
+
+**Secretos y credenciales**:
+- ✅ Usar variables de entorno
+- ❌ NUNCA hardcodear secretos
+- ✅ Usar [servicio de secrets: AWS Secrets Manager, etc.]
+
+**Librerías de seguridad**:
+- [Librería 1]: [Propósito]
+- [Librería 2]: [Propósito]
+
+**Ver también**: [SKILLS.md - Authentication & Authorization](./SKILLS.md#authentication--authorization)
 
 ---
 
 ## 🎯 Tareas Comunes
 
+> **NOTA**: Esta sección proporciona un overview rápido. Para procedimientos detallados paso a paso,
+> consulta [SKILLS.md - Procedimientos Estándar](./SKILLS.md#procedimientos-estándar)
+
 ### Agregar una Nueva [Entidad/Feature]
-<!-- Checklist paso a paso -->
-1. [Paso 1: Crear modelo/entidad]
-2. [Paso 2: Crear repositorio/DAO]
-3. [Paso 3: Crear DTOs]
-4. [Paso 4: Crear servicio]
-5. [Paso 5: Crear controlador/endpoint]
-6. [Paso 6: Agregar tests]
-7. [Paso 7: Actualizar documentación]
+**Quick checklist**:
+1. Crear modelo/entidad en `[directorio]`
+2. Crear repositorio en `[directorio]`
+3. Crear DTOs en `[directorio]`
+4. Implementar servicio en `[directorio]`
+5. Crear controlador/endpoint en `[directorio]`
+6. Agregar tests en `[directorio]`
+7. Actualizar documentación
+
+**Ver procedimiento completo**: [SKILLS.md - Agregar Nueva Funcionalidad](./SKILLS.md#procedimiento-agregar-nueva-funcionalidad)
+
+**Skills necesarias**: 
+- [Skill 1: Database Management](./SKILLS.md#database-management)
+- [Skill 2: API Development](./SKILLS.md#api-development)
+- [Skill 3: Testing](./SKILLS.md#testing--quality-assurance)
+
+---
 
 ### Agregar un Endpoint/Ruta
-1. [Paso 1]
-2. [Paso 2]
-3. [Paso 3]
-4. [Paso 4]
+**Quick checklist**:
+1. Definir ruta en controlador siguiendo patrón: `[patrón]`
+2. Implementar DTOs de request/response
+3. Agregar validaciones
+4. Implementar lógica en servicio
+5. Agregar tests
+6. Actualizar documentación API
+
+**Ver procedimiento completo**: [SKILLS.md - API Development](./SKILLS.md#api-development)
+
+---
 
 ### Optimizar Performance
-1. [Paso 1: Identificar bottleneck]
-2. [Paso 2: Aplicar optimización]
-3. [Paso 3: Medir impacto]
-4. [Paso 4: Documentar cambio]
+**Quick checklist**:
+1. Identificar bottleneck con [herramienta]
+2. Analizar queries/código problemático
+3. Aplicar optimización (caching, indexing, etc.)
+4. Medir impacto
+5. Documentar cambio
 
-### [Otras tareas comunes del proyecto]
-1. [Pasos específicos]
+**Ver procedimiento completo**: [SKILLS.md - Performance Optimization](./SKILLS.md#performance-optimization)
+
+---
+
+### Debugging de Problemas
+**Ver procedimiento completo**: [SKILLS.md - Debugging de Problemas](./SKILLS.md#procedimiento-debugging-de-problemas)
+
+### Refactoring de Código
+**Ver procedimiento completo**: [SKILLS.md - Refactoring de Código](./SKILLS.md#procedimiento-refactoring-de-código)
 
 ---
 
@@ -656,8 +849,9 @@ function miFuncion(parametro1: string, parametro2: number): boolean {
 
 ## 📋 Checklist para Completar esta Plantilla
 
-Al generar un AGENTS.md desde esta plantilla, asegúrate de:
+Al generar AGENTS.md + SKILLS.md desde estas plantillas, asegúrate de:
 
+### AGENTS.md (Contexto del Proyecto)
 - [ ] Analizar completamente el proyecto
 - [ ] Identificar todas las tecnologías y versiones
 - [ ] Mapear la estructura de directorios
@@ -666,57 +860,122 @@ Al generar un AGENTS.md desde esta plantilla, asegúrate de:
 - [ ] Incluir ejemplos de código reales del proyecto
 - [ ] Documentar convenciones de nomenclatura observadas
 - [ ] Identificar patrones de diseño utilizados
-- [ ] Listar comandos funcionales (verificados)
 - [ ] Incluir información de seguridad relevante
 - [ ] Eliminar secciones que no apliquen al proyecto
 - [ ] Agregar secciones adicionales específicas del proyecto
+- [ ] Crear referencias cruzadas a SKILLS.md
 - [ ] Verificar que toda la información sea precisa
 - [ ] Eliminar estos comentarios e instrucciones
+
+### SKILLS.md (Capacidades y Procedimientos)
+- [ ] Identificar skills requeridas según tipo de proyecto (frontend/backend)
+- [ ] Documentar procedimientos estándar del proyecto
+- [ ] Incluir comandos verificados y funcionales
+- [ ] Agregar skills personalizadas específicas del proyecto
+- [ ] Crear ejemplos de código ejecutables
+- [ ] Documentar checklist de verificación para cada procedimiento
+- [ ] Incluir quick reference de comandos
+- [ ] Crear skill matrix para referencia rápida
+- [ ] Referencias cruzadas a AGENTS.md donde sea relevante
+- [ ] Eliminar skills no aplicables al proyecto
+- [ ] Eliminar comentarios e instrucciones
+
+### Integración
+- [ ] Verificar que las referencias cruzadas funcionen
+- [ ] Asegurar consistencia entre ambos documentos
+- [ ] No duplicar información (división clara de responsabilidades)
+- [ ] AGENTS.md enfocado en QUÉ/CÓMO es el proyecto
+- [ ] SKILLS.md enfocado en QUÉ/CÓMO HACER tareas
 
 ---
 
 ## 💡 Notas para la IA Generadora
 
-**Cómo usar esta plantilla**:
+**Flujo de trabajo para generar documentación completa**:
 
-1. **Analiza el proyecto completo**: Lee archivos clave como `package.json`, `pom.xml`, `requirements.txt`, configuraciones, etc.
+### Paso 1: Análisis del Proyecto
+1. **Analiza el proyecto completo**: Lee `package.json`, `pom.xml`, `requirements.txt`, configs, etc.
+2. **Identifica el stack tecnológico**: Lenguajes, frameworks, bases de datos, herramientas
+3. **Determina el tipo**: Backend, Frontend, Fullstack, CLI, Library
+4. **Mapea la arquitectura**: Organización del código, patrones, capas
+5. **Extrae entidades y dominio**: Modelos, tablas, relaciones
+6. **Identifica funcionalidades**: Módulos principales y sus responsabilidades
 
-2. **Identifica el stack tecnológico**: Determina lenguajes, frameworks, bases de datos, y herramientas.
+### Paso 2: Generar AGENTS.md
+**Enfoque**: Contexto del proyecto - QUÉ es y CÓMO está estructurado
 
-3. **Mapea la arquitectura**: Identifica cómo está organizado el código y qué patrones sigue.
+**Incluir**:
+- ✅ Información general y stack tecnológico
+- ✅ Arquitectura, capas y principios SOLID
+- ✅ Estructura de directorios
+- ✅ Entidades y dominio de datos
+- ✅ Convenciones de nomenclatura y estilo
+- ✅ Reglas críticas específicas del proyecto
+- ✅ Configuración y variables de entorno
+- ✅ Referencias a SKILLS.md para procedimientos
 
-4. **Extrae entidades y dominio**: Encuentra modelos, entidades, tablas, y sus relaciones.
+**Evitar**:
+- ❌ Procedimientos paso a paso detallados (van en SKILLS.md)
+- ❌ Comandos de ejecución (van en SKILLS.md)
+- ❌ Ejemplos de tareas específicas (van en SKILLS.md)
 
-5. **Documenta funcionalidades**: Identifica los módulos principales y qué hace cada uno.
+### Paso 3: Generar SKILLS.md
+**Enfoque**: Capacidades del agente - QUÉ PUEDE HACER y CÓMO ejecutarlo
 
-6. **Captura convenciones**: Observa patrones de nomenclatura, estructura de archivos, y estándares de código.
+**Incluir**:
+- ✅ Skills básicas según tipo (Frontend/Backend)
+- ✅ Skills personalizadas del proyecto
+- ✅ Procedimientos estándar paso a paso
+- ✅ Comandos verificados y funcionales
+- ✅ Ejemplos de código ejecutables
+- ✅ Checklists de verificación
+- ✅ Quick reference de comandos
+- ✅ Referencias a AGENTS.md para contexto
 
-7. **Incluye ejemplos reales**: Usa snippets del código actual, no genéricos.
+**Priorizar skills según frecuencia de uso en el proyecto**
 
-8. **Personaliza secciones**: Elimina lo que no aplique, agrega lo que falte.
+### Paso 4: Integración
+- ✅ Crear referencias cruzadas claras entre ambos documentos
+- ✅ Asegurar consistencia en terminología
+- ✅ Evitar duplicación de información
+- ✅ División clara de responsabilidades:
+  - AGENTS.md = Conocimiento del proyecto
+  - SKILLS.md = Capacidades de acción
 
-9. **Verifica comandos**: Asegúrate que los comandos listados funcionan.
-
-10. **Sé específico**: Evita generalidades, proporciona información precisa y verificable.
-
-**Secciones críticas** (no omitir):
+**Secciones críticas de AGENTS.md** (no omitir):
+- Relación AGENTS.md ↔ SKILLS.md
 - Información General y Stack
 - Arquitectura y Principios SOLID
 - Estructura de Capas
 - Dominio de Datos
-- Convenciones de Código y Documentación
+- Convenciones de Código
 - Puntos Importantes para Agentes
 
-**Adapta según el tipo de proyecto**:
-- **Backend API**: Enfócate en endpoints, base de datos, servicios
-- **Frontend**: Enfócate en componentes, estado, routing, UI
-- **Fullstack**: Balancea ambos aspectos
-- **CLI/Library**: Enfócate en API pública, configuración, uso
+**Secciones críticas de SKILLS.md** (no omitir):
+- Skills Básicas (Frontend o Backend según corresponda)
+- Skills Específicas del Proyecto
+- Procedimientos Estándar
+- Quick Reference de Comandos
 
-**Tono y estilo**:
+**Adapta según el tipo de proyecto**:
+- **Backend API**: 
+  - AGENTS.md: arquitectura de servicios, entidades, APIs
+  - SKILLS.md: Database Management, API Development, Testing
+- **Frontend**: 
+  - AGENTS.md: estructura de componentes, estado, routing
+  - SKILLS.md: Component Development, State Management, UI/UX
+- **Fullstack**: 
+  - AGENTS.md: arquitectura completa (cliente y servidor)
+  - SKILLS.md: balance de skills frontend + backend
+- **CLI/Library**: 
+  - AGENTS.md: API pública, configuración
+  - SKILLS.md: Usage patterns, testing, packaging
+
+**Tono y estilo** (ambos documentos):
 - Claro y conciso
 - Usa listas y bullets
 - Incluye emojis para secciones (mejora legibilidad)
 - Formato markdown correcto
 - Ejemplos de código con syntax highlighting
+- Información específica y verificable, no genérica
 
